@@ -35,6 +35,15 @@ func Initialize(log zerolog.Logger, set Settings) (func(context.Context) *sync.W
 	}
 
 	log.Info().Msgf("Loading %d plugin(s)...", len(plugins))
+	// Ensure that no two plugins have the same name. This prevents plugins from using the same data folder.
+	names := map[string]struct{}{}
+	for _, plugin := range plugins {
+		if _, ok := names[plugin.impl.Name()]; ok {
+			log.Fatal().Msgf("Found multiple plugins with the same name '%s'.", plugin.impl.Name())
+		}
+		names[plugin.impl.Name()] = struct{}{}
+	}
+
 	// Setup stage
 	// -----------
 	for _, plugin := range plugins {
