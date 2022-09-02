@@ -6,6 +6,7 @@ import (
 	"github.com/rs/zerolog"
 	"os"
 	"path/filepath"
+	"strings"
 	"sync"
 	"sync/atomic"
 )
@@ -38,10 +39,11 @@ func Initialize(log zerolog.Logger, set Settings) (func(context.Context) *sync.W
 	// Ensure that no two plugins have the same name. This prevents plugins from using the same data folder.
 	names := map[string]struct{}{}
 	for _, plugin := range plugins {
-		if _, ok := names[plugin.impl.Name()]; ok {
+		s := strings.ToLower(plugin.Impl().Name())
+		if _, ok := names[s]; ok {
 			log.Fatal().Msgf("Found multiple plugins with the same name '%s'.", plugin.impl.Name())
 		}
-		names[plugin.impl.Name()] = struct{}{}
+		names[s] = struct{}{}
 	}
 
 	// Setup stage
