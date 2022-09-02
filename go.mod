@@ -4,9 +4,10 @@ go 1.19
 
 require (
 	github.com/df-mc/dragonfly v0.8.3
-	github.com/google/uuid v1.3.0
+	github.com/muhammadmuzzammil1998/jsonc v1.0.0
 	github.com/pelletier/go-toml/v2 v2.0.5
 	github.com/rs/zerolog v1.28.0
+	gopkg.in/yaml.v2 v2.3.0
 )
 
 require (
@@ -17,10 +18,10 @@ require (
 	github.com/go-gl/mathgl v1.0.0 // indirect
 	github.com/golang/protobuf v1.5.2 // indirect
 	github.com/golang/snappy v0.0.4 // indirect
+	github.com/google/uuid v1.3.0 // indirect
 	github.com/klauspost/compress v1.15.1 // indirect
 	github.com/mattn/go-colorable v0.1.13 // indirect
 	github.com/mattn/go-isatty v0.0.16 // indirect
-	github.com/muhammadmuzzammil1998/jsonc v1.0.0 // indirect
 	github.com/rogpeppe/go-internal v1.3.0 // indirect
 	github.com/sandertv/go-raknet v1.11.1 // indirect
 	github.com/sandertv/gophertunnel v1.24.5 // indirect
