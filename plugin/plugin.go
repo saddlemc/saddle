@@ -2,7 +2,6 @@ package plugin
 
 import (
 	"context"
-	"github.com/google/uuid"
 	"github.com/rs/zerolog"
 	"os"
 )
@@ -10,9 +9,6 @@ import (
 // Impl is the implementation of a plugin. It is a module that extends the server functionality in different ways. It is
 // used to set up the server before running, so things like configuration files can be created and loaded.
 type Impl interface {
-	// UUID returns a unique identifier for the plugin. This identifier is used to distinguish the plugin from other
-	// plugins across multiple sessions.
-	UUID() uuid.UUID
 	// Name returns the displayed name of the plugin. Currently, this is used to name the plugin's data folder. The name
 	// must be a valid name for a folder. The plugin name should stay the same when the server is running!
 	Name() string
