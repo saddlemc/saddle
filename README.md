@@ -12,7 +12,7 @@ used for a production server.*
 ### Saddle compared to Dragonfly
 While saddle is built on top of dragonfly, using it as a library, it is pretty different from and not affiliated with 
 dragonfly. They are both trying to achieve a different goal. While dragonfly is aimed at developers and more technical 
-users, saddle cam be used by everyone looking to create their own server but may not know how to code.
+users, saddle can be used by everyone looking to create their own server but may not know how to code.
 
 However, even if you do know how to code you might still have a reason to use Saddle, as it provides an interface for
 different logic to work together. In dragonfly there are no such standards built in.
