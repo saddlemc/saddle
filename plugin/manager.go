@@ -75,8 +75,8 @@ func Initialize(log zerolog.Logger, set Settings) (func(context.Context) *sync.W
 			wg.Add(1)
 
 			go func(plugin *Plugin) {
+				defer wg.Done()
 				plugin.impl.Run(ctx, plugin)
-				wg.Done()
 			}(plugin)
 		}
 		return wg
